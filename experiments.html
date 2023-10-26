@@ -2,100 +2,133 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8" />
-	<meta name="description" content="Simple demo Web page for CSE 134B" />
-	<meta name="keywords" content="HTML, CSS, JavaScript" />
-	<meta name="author" content="" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>CSE 134B Homework 1 Website</title>
-	<link href="images/favicon.ico" rel="icon" />
-	<link href="styles/main.css" rel="stylesheet" />
-	<script>
-		window.addEventListener('load', function () {
-			let time = window.performance.timing,
-				complete = time.domComplete - time.domLoading;
-			document.getElementById('page-load-info').innerHTML = `<strong>Page Loaded in ${parseInt(complete)}ms
-			 on ${new Date().toLocaleString("en-US")}</strong>`;
-		});
-	</script>
+	<meta charset="utf-8">
+	<meta name="description" content="Experimenting with HTML Tags">
+	<meta name="keywords" content="HTML, Experimenting">
+	<meta name="author" content="Jonathan Weakliem">
+	<meta name="viewport" content="width=demlvice-width, initial-scale=1.0">
+	<title>Jonathan Weakliem's HTML Hell</title>
+	<!-- TODO: Change later -->
+	<link href="images/favicon.ico" rel="icon">
 </head>
 
 <body>
-	<header>
-		<h1>Jonathan Weakliem's Website</h1>
-		
-		<section id="user-info-component">
-			<div id="user-info" style="display: none;">
-				<output id="name-info">&nbsp;</output>
-				<br />
-				<output id="major-info">&nbsp;</output>
-				<hr />
-				<br />
-				<!-- Inline Javascript Handlers used here for demonstration only -->
-				<section class="intro-text">
-					<label>My name is <input id="name-input" type="text" autocomplete="name" autofocus maxlength="30" placeholder="Your Name"></label>
-					<br />
-					<label>My major is <input id="major-input" type="text" maxlength="30" placeholder="Your Major"></label>
-				</section>
-	
-				<button onclick="window.update();">Update</button>
-			</div>
-			<script>
-				document.getElementById('user-info').style.display = 'block';
-			</script>
-			<noscript class="error">Error: JavaScript is disabled or blocked.</noscript>
-		</section>
+
+<h1>
+	Experiments
+</h1>
+
+<h2>
+	Text stuff
+</h2>
+
+<pre>Hello world here is a tab 				 or 2</pre>
+<p>Now time for a list of my favorite things to do:</p>
+<ol>
+	<li>
+		Not homework
+	</li>
+	<li>
+		Please let me sleep...
+	</li>
+</ol>
+<p>Wow and look at what <span style="color:blue">spanning text can do!</span></p>
+<hr>
+<code>// some code seperated from the rest of the text cause code is basically a foreign language: <br>	System.out.println("hello world")</code>
+<h2>Some cool form stuff</h2>
+<form>
+	<fieldset>
+		<legend>This is a cool legend isn't it!</legend>
+		<label for="ide_theme">What's your favorite IDE Theme?</label><br>
+		<input id="ide_theme" name="ide_theme" list="ide_list"><br>
+		<label for="yes_no" name="yes_no_select">Wow so you like light mode!?</label>
+		<select>
+			<optgroup label="Valid answers">
+				<option>Yes</option>
+				<option>Yes</option>
+			</optgroup>
+		</select><br>
+		<datalist id="ide_list">
+			<option value="light mode"></option>
+			<option value="light mode"></option>
+			<option value="light mode"></option>
+		</datalist>
+		<label for="big">Enter your life story:</label><br>
+		<textarea id="big" name="big" rows="5" cols=50">We will sell it to advertisers</textarea><br>
+	</fieldset>
+</form>
+
+<h2>Some Cool Media and Whatnot</h2>
+<h3>Figures!!</h3>
+<figure>
+	<img src="./images/triton.jpg" alt="Triton pic" height="200"/>
+	<figcaption>A very impressive statue</figcaption>
+</figure>
+<figure>
+	<audio controls src="./images/auth_push.mp4"></audio>
+	<figcaption>Listen to this great audio!</figcaption>
+</figure>
+
+<h3>SVG!</h3>
+<svg>
+    <rect x="5" y="5" width="100px" height="100px" />
+</svg>
+
+<h3>Iframe!</h3>
+<iframe src="./index.html" title="Wow look the main page!"></iframe>
+<br>
+
+<h3>Canvas!!</h3>
+<canvas width="200" height="200" style="border:10px solid #000000;">
+</canvas>
+<script>
+	let canvas = document.querySelector("canvas");
+	let canvas_context = canvas.getContext("2d");
+	canvas_context.createLinearGradient(1, 2, 3, 4)
+	canvas_context.fillRect(100, 100, 100, 100)
+</script>
 
 
-		<section id="page-load-component">
-			<div id="load-info" style="display: none;">
-				<output id="page-load-info">Measuring...</output>
-			</div>
-			<script>
-				document.getElementById('load-info').style.display = 'block';
-			</script>
-			<noscript class="error">Error: JavaScript required for page timing measurement </noscript>
-		</section>
-	</header>
+<h2>MathML Extra Credit (cause we love math 100%)</h2>
+<ol>
+	<li>
+		<math>
+			<mrow>
+			  <msup>
+				<mi>E</mi>
+			  </msup>
+			  <mo>=</mo>
+			  <msup>
+				<mi>mc</mi>
+				<mn>2</mn>
+			</msup>
+			</mrow>
+		  </math>
+	</li>
+	<li>
+		<p>MathML support was only added on chrome and edge in the last year, meaning most
+			people on the internet wouldn't be able to render this tag so it couldn't be used.
+		</p>
+	</li>
+	<li>
+		Meta tags are in the main and experiments page
+	</li>
+</ol>
 
-	<main>
-		<h2>UCSD Images</h2>
-		<section class="img">
-			<img src="images/bear.png" alt="Warren Bear" height="430" width="700" />
-			<img src="images/triton.jpg" alt="Triton" height="430" width="700" />
-			<a href="https://ucsd.edu" target="_blank"><img src="images/ucsd.gif" alt="UCSD" height="177"
-				width="700"></a>
-			<br />
-			<section id="links">
-				<h2>Useful Links</h2>
-				<ul>
-					<li><a href="http://tritonlink.ucsd.edu">TritonLink</a></li>
-					<li><a href="http://canvas.ucsd.edu">Canvas</a></li>
-					<li><a href="http://w3.org">W3</a></li>
-				</ul>
-			</section>
+<h2>
+	Go back button:
+</h2>
 
-		<section class="video">
-			<h2>UCSD Promo Video</h2>
-			<video controls height="393" width="700">
-				<source src="videos/videoplayback.mp4" type="video/mp4" />
-				<div class="error">Your browser does not support the video tag.</div>
-			</video>
-		</section>
-			<br />
+<template id="go_back">
+	<strong>You can never leave the experiments page!!</strong>
+</template>
 
-		</section>
-	</main>
-
-	<footer>
-		<hr/>
-		<p>💯This page was made with &hearts; by Jonathan Weakliem 💯</p>
-	</footer>
-	<script type="module">
-		import { update } from './scripts/main.js';
-		window.update = update;
-	</script>
-	<script nomodule src="scripts/main-es5.js"></script>
+<button onclick="tryToGoBack()">Go back to home</button>
+<script>
+	function tryToGoBack(){
+		let temp = document.getElementById("go_back");
+		let clon = temp.content.cloneNode(true);
+		document.body.appendChild(clon);
+	}
+</script>
 </body>
-
-</html>
