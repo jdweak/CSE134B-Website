@@ -3,99 +3,234 @@
 
 <head>
 	<meta charset="utf-8" />
-	<meta name="description" content="Simple demo Web page for CSE 134B" />
-	<meta name="keywords" content="HTML, CSS, JavaScript" />
-	<meta name="author" content="" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>CSE 134B Homework 1 Website</title>
+	<meta name="description" content="Personal Site for Jonathan Weakliem" />
+	<meta name="keywords" content="Jonathan Weakliem, Resume, Projects, Software Engineering, UC San Diego" />
+	<meta name="author" content="Jonathan Weakliem" />
+	<meta name="viewport" content="width=demlvice-width, initial-scale=1.0" />
+	<title>Jonathan Weakliem Personal Site</title>
+	<!-- TODO: Change later -->
 	<link href="images/favicon.ico" rel="icon" />
+	<!-- no css for now -->
 	<link href="styles/main.css" rel="stylesheet" />
+	
 	<script>
-		window.addEventListener('load', function () {
-			let time = window.performance.timing,
-				complete = time.domComplete - time.domLoading;
-			document.getElementById('page-load-info').innerHTML = `<strong>Page Loaded in ${parseInt(complete)}ms
-			 on ${new Date().toLocaleString("en-US")}</strong>`;
-		});
+		// no scripting for hw 1
 	</script>
 </head>
 
 <body>
 	<header>
-		<h1>Jonathan Weakliem's Website</h1>
-		
-		<section id="user-info-component">
-			<div id="user-info" style="display: none;">
-				<output id="name-info">&nbsp;</output>
-				<br />
-				<output id="major-info">&nbsp;</output>
-				<hr />
-				<br />
-				<!-- Inline Javascript Handlers used here for demonstration only -->
-				<section class="intro-text">
-					<label>My name is <input id="name-input" type="text" autocomplete="name" autofocus maxlength="30" placeholder="Your Name"></label>
-					<br />
-					<label>My major is <input id="major-input" type="text" maxlength="30" placeholder="Your Major"></label>
-				</section>
-	
-				<button onclick="window.update();">Update</button>
-			</div>
-			<script>
-				document.getElementById('user-info').style.display = 'block';
-			</script>
-			<noscript class="error">Error: JavaScript is disabled or blocked.</noscript>
-		</section>
-
-
-		<section id="page-load-component">
-			<div id="load-info" style="display: none;">
-				<output id="page-load-info">Measuring...</output>
-			</div>
-			<script>
-				document.getElementById('load-info').style.display = 'block';
-			</script>
-			<noscript class="error">Error: JavaScript required for page timing measurement </noscript>
-		</section>
+		<nav>
+			<button type="button">Home</button>
+			<button type="button">Work Experience</button>
+			<button type="button">Projects</button>
+			<button type="button">Education</button>
+			<button type="button">Skills</button>
+			<button type="button">Experiments</button>
+		</nav>		
 	</header>
-
+	
 	<main>
-		<h2>UCSD Images</h2>
-		<section class="img">
-			<img src="images/bear.png" alt="Warren Bear" height="430" width="700" />
-			<img src="images/triton.jpg" alt="Triton" height="430" width="700" />
-			<a href="https://ucsd.edu" target="_blank"><img src="images/ucsd.gif" alt="UCSD" height="177"
-				width="700"></a>
-			<br />
-			<section id="links">
-				<h2>Useful Links</h2>
+		<section id="about_me" title="About Me">
+			<h1>Site currently under construction</h1>
+			<h1>Jonathan Weakliem</h1>
+			<h2>About me:</h2>
+			<p>
+				Lots of text about myself wowww Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+			<picture id="portrait">
+				<source srcset="./images/portrait.webp" type="image/webp">
+				<img src="./images/portrait.jpg" height="300" width="300" alt = "portrait shot">
+			</picture>
+			<section id="contact">
+				<!--  -->
+				<h2>Contact Me:</h2>
 				<ul>
-					<li><a href="http://tritonlink.ucsd.edu">TritonLink</a></li>
-					<li><a href="http://canvas.ucsd.edu">Canvas</a></li>
-					<li><a href="http://w3.org">W3</a></li>
+					<li><a href="https://www.linkedin.com/in/jweakliem/">LinkedIn</a></li>
+					<li><address><a href="jonathanweakliem@gmail.com">Email</a><address></li>
+					<li><a href="https://github.com/jdweak">Github</a></li>
 				</ul>
 			</section>
 
-		<section class="video">
-			<h2>UCSD Promo Video</h2>
-			<video controls height="393" width="700">
-				<source src="videos/videoplayback.mp4" type="video/mp4" />
-				<div class="error">Your browser does not support the video tag.</div>
-			</video>
 		</section>
-			<br />
+
+		<!-- Work Experience -->
+
+		<section id="work_experience">
+			<section id="Allthenticate_Fullstack">
+				<h1>Work Experience</h1>
+					
+				<h2>Fullstack Software Engineering Intern @ Allthenticate</h2>
+				<p><strong>June 2023 - Sept. 2023, Houston TX</strong></p>
+				<p>
+					Worked as a software engineering intern at Allthenticate, a company that provides passwordless authentication solutions for 
+					smart doorlocks, desktops, and web applications. My work for this Summer was focused on the company's cloud infastructure.
+				</p>
+				<h3>Accomplishments:</h3>
+				<ul>
+					<li>point 1</li>
+				</ul>
+				<!-- Play around with resolution in the future -->
+				<div class="media_grouping">
+					<video>
+						<source src="./images/auth_push.mp4" type="video/mp4" preload="none">
+						Demo of web authentication feature
+					</video> 
+				</div>
+			</section>
+
+			<section id="NLP_Research">
+				<h2>Undergraduate Researcher @ Computing for Social Good Lab, UC San Diego</h2>
+				<p><strong>Sept. 2022 - June 2023, San Diego CA</strong></p>
+				<p>
+					Researched mental burnout on Reddit using NLP techniques with the CSG Lab at UCSD.  
+				</p>
+				<h3>Accomplishments:</h3>
+				<ul>
+					<li>point 1</li>
+				</ul>
+				<!-- Play around with resolution in the future -->
+				<div class="media_grouping">
+					<picture id="nlp_pic">
+						<img src="./images/placeholder.png" height="300" width="300" alt = "placeholder text", loading="lazy">
+					</picture>
+				</div>
+			</section>
+
+
+			<section id="Allthenticate_OS">
+				<h2>Software Engineering Intern @ Allthenticate</h2>
+				<p><strong>June. 2022 - Sept. 2022, Santa Barbara CA</strong></p>
+				<p>
+					Worked on Allthenticate's Desktop application codestack, specifically building the Windows OS
+					implementation of company software
+				</p>
+				<h3>Accomplishments:</h3>
+				<ul>
+					<li>point 1</li>
+				</ul>
+				<!-- Play around with resolution in the future -->
+				<div class="media_grouping">
+					<picture id="allthenticate_windows_pic">
+						<img src="./images/placeholder.png" height="300" width="300" alt = "placeholder text", loading="lazy">
+					</picture>
+				</div>
+			</section>
+
+
+			<section id="Sonatech">
+				<h2>Manufacturing Engineering Intern @ Sonatech</h2>
+				<p><strong>Mar. 2021 - Sept. 2021, Santa Barbara CA</strong></p>
+				<p>
+					Worked on the manufacturing process for submarine sonar arrays
+				</p>
+				<h3>Accomplishments:</h3>
+				<ul>
+					<li>point 1</li>
+				</ul>
+				<!-- Play around with resolution in the future -->
+				<div class="media_grouping">
+					<picture id="sonatech_pic">
+						<img src="./images/placeholder.png" height="300" width="300" alt = "placeholder text", loading="lazy">
+					</picture>
+				</div>
+			</section>
+			
+		</section>
+
+
+
+		<!-- Projects -->
+
+		<section id="Projects">
+			<h1>Projects</h1>
+
+			<section id="image_guess">
+				<h2>Mystery Image</h2>
+				<p>
+					App that displays the top google result and the user has to guess the search query
+				</p>
+				<h3>Links:</h3>
+				<ul>
+					<li><a href="https://play.google.com/store/apps/details?id=weakliem.jonathan.finalproject&hl=en_US&gl=US">Google Play Store</a></li>
+				</ul>
+				<!-- Play around with resolution in the future -->
+				<div class="media_grouping">
+					<picture id="mystery_image_pic">
+						<img src="./images/placeholder.png" height="300" width="300" alt = "placeholder text", loading="lazy">
+					</picture>
+				</div>
+			</section>
+
+
+			<section id="MC_Pluggins">
+				<h2>Minecraft Pluggins</h2>
+				<p>
+					Minecraft plugins created using the spigot API.
+				</p>
+				<h3>Specific Plugins</h3>
+				<ul>
+					<li>Plugin 1</li>
+				</ul>
+				<!-- Play around with resolution in the future -->
+				<div class="media_grouping">
+					<picture id="plugin_pic">
+						<img src="./images/placeholder.png" height="300" width="300" alt = "placeholder text", loading="lazy">
+					</picture>
+				</div>
+			</section>
+		</section>
+
+		<!-- Education -->
+
+		<section id="Education">
+			<h1>Education</h1>
+			<h2>UC San Diego</h2>
+			<i>Sept. 2021 - July 2025 (Expected)</i> <br>
+			<b>Computer Science and Engineering, B.S. | GPA: 4.0</b> <br>
+			<em>Regents Scholar, Deans List</em>
+			<details>
+				<summary>Relavent Coursework</summary>
+				<aside><p>Upper division CS courses listed</p> </aside>
+				<p>
+					Advanced Data Structures, Theory of Computation, Intro to CS Research
+					Software Engineering, Algorithm Design, Operating Systems, Intro to Programming Competitions
+				</p>
+			</details>
 
 		</section>
-	</main>
+
+		<!-- Skills -->
+
+		<section id="skills">
+			<h1>Skills</h1>
+			<table>
+				<caption>Relavent Software Engineering Skills</caption>
+				<colgroup>
+					<col span="1">
+					<col span="1">
+					<col span="1">
+				  </colgroup>
+				
+				<tr>
+					<th>Languages</th>
+					<th>Dev Tools</th>
+					<th>Technologies</th>
+				</tr>
+				<tr>
+					<td>Python, Java, C/C++, JavaScript</td>
+					<td>Poetry, git, other stuff lmao</td>
+					<td>wheeee</td>
+				</tr>
+			</table>
+		</section>
+
+
 
 	<footer>
 		<hr/>
 		<p>💯This page was made with &hearts; by Jonathan Weakliem 💯</p>
 	</footer>
-	<script type="module">
-		import { update } from './scripts/main.js';
-		window.update = update;
-	</script>
-	<script nomodule src="scripts/main-es5.js"></script>
 </body>
 
 </html>

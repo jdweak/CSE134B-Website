@@ -1,6 +1,7 @@
-/* main.css */
 
-html,
+  /* No css for now */
+
+/* html,
 body {
   background-color: lightblue;
 }
@@ -21,10 +22,10 @@ body {
   font-style: italic;
   font-weight: 400;
   src: url("../fonts/Literata/static/Literata-Italic.ttf") format("truetype");
-}
+} */
 
 /****** header ******/
-header {
+/* header {
   background-image: url("../images/bg_homepage.jpg");
   background-color: #fcfcdc;
   text-align: center;
@@ -36,9 +37,9 @@ header {
 header hr {
   width: 30%;
 }
-
+ */
 /****** main content ******/
-img{
+/* img{
   margin: 10px;
 }
 
@@ -68,7 +69,7 @@ a:active { background-color: yellow; border: 4px solid red;}
 
 
 /****** footer ******/
-footer {
+/* footer {
   font-size: small;
   text-align: center;
-}
+} */
