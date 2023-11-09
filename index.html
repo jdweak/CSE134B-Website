@@ -42,7 +42,7 @@
 				<h1>Jonathan Weakliem</h1>
 				<!-- <h2>About me:</h2> -->
 				<p id="abut_me_text">
-					Lots of text about myself wowww Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Currently a junior at UCSD studying computer science. I love exploring and learning about all the fields of programming, with my primary interests being cybersecurity, software engineering, and machine learning. After graduating, I look to work in the tech industry, get a Masters Degree, and eventually become a professor in computer science after having gained both academic and real-world experience in the field.
 				</p>
 
 				<section id="contact">
@@ -82,8 +82,10 @@
 						smart doorlocks, desktops, and web applications. My work for this Summer was focused on the company's cloud infastructure.
 					</p>
 					<h3>Accomplishments:</h3>
-					<ul>w
-						<li>point 1</li>
+					<ul>
+						<li>Designed and implemented Socket.IO protocol for web authentication requests, allowing users to approve requests using the company app in  200ms, compared to a previous load time of over 5 seconds</li>
+						<li>Refactored admin portal Flask APIs to CRUD to improve code cleanliness and ease of use for developers</li>
+						<li>Used Vue.js to assist in the development and release of the admin portal frontend overhaul</li>
 					</ul>
 				</div>
 
@@ -98,7 +100,7 @@
 					
 			</section>
 				
-				<section id="NLP_Research">
+				<section id="NLP_Research" class="info_section">
 					<div class="grid_text">
 						<h3>Undergraduate Researcher @ Computing for Social Good Lab, UC San Diego</h3>
 						<time>Sept. 2022 - June 2023, San Diego CA</time>
@@ -107,15 +109,22 @@
 						</p>
 						<h3>Accomplishments:</h3>
 						<ul>
-							<li>point 1</li>
+							<li>Used PRAW and PMAW APIs to collect 400,000 burnout posts and 5.5 million burnout comments from 2014--2023</li>
+							<li>Developed tools using numpy and sklearn to quantify the quality of data labeling in the lab</li>
+							<li>Created a pipeline using sklearn for training NLP models to predict clinical features of burnout posts</li>
+							<li>Presented findings at UCSD's JSOE Undergrad Research Symposium and the ERSP National Conference</li>
 						</ul>
 					</div>
 					<!-- Play around with resolution in the future -->
 					<div class="media_grouping">
 						<picture>
-							<source srcset="./images/portrait.webp" type="image/webp">
-							<!-- <img src="./images/ersp.jpg" height="300vh" alt = "presenting research results"> -->
+							<source srcset="./images/ersp.webp" type="image/webp">
+							<img src="./images/placeholder.png" height="300vh" alt = "presenting research results">
 						</picture>
+						<br>
+						<cite>
+							Presenting findings at the JSOE Undergraturate Research Symposium
+						</cite>
 					</div>
 			</section>
 
@@ -125,48 +134,32 @@
 		<section id="projects">
 			<h2>Projects</h2>
 
-			<section id="image_guess">
-				<h3>Mystery Image</h3>
-				<p>
-					App that displays the top google result and the user has to guess the search query
-				</p>
-				<h3>Links:</h3>
-				<ul>
-					<li><a href="https://play.google.com/store/apps/details?id=weakliem.jonathan.finalproject&hl=en_US&gl=US">Google Play Store</a></li>
-				</ul>
+			<section id="image_guess" class="info_section">
+				<div class="info_section">
+					<h3>Mystery Image</h3>
+					<p>
+						App that displays the top google result and the user has to guess the search query
+					</p>
+					<h3>Links:</h3>
+					<ul>
+						<li><a href="https://play.google.com/store/apps/details?id=weakliem.jonathan.finalproject&hl=en_US&gl=US">Google Play Store</a></li>
+					</ul>
+				</div>
 				<!-- Play around with resolution in the future -->
 				<div class="media_grouping">
 					<picture id="mystery_image_pic">
-						<img src="./images/placeholder.png" height="300" width="300" alt = "placeholder text" loading="lazy">
+						<source srcset="./images/mystery_image.webp" type="image/webp">
+						<img src="./images/mystery_image.jpg" alt = "Screenshot of Mystery Image app" loading="lazy">
 					</picture>
 				</div>
 			</section>
-
-
-			<section id="MC_Pluggins">
-				<h3>Minecraft Pluggins</h3>
-				<p>
-					Minecraft plugins created using the spigot API.
-				</p>
-				<h3>Specific Plugins</h3>
-				<ul>
-					<li>Plugin 1</li>
-				</ul>
-				<!-- Play around with resolution in the future -->
-				<div class="media_grouping">
-					<picture id="plugin_pic">
-						<img src="./images/placeholder.png" height="300" width="300" alt = "placeholder text" loading="lazy">
-					</picture>
-				</div>
-			</section>
-		</section>
 
 		<!-- Education -->
 
 		<section id="education">
 			<h2>Education</h2>
 			<h3>UC San Diego</h3>
-			<i>Sept. 2021 - July 2025 (Expected)</i> <br>
+			<time style="font-weight:normal;">Sept. 2021 - July 2025 (Expected)</time> <br>
 			<b>Computer Science and Engineering, B.S. | GPA: 4.0</b> <br>
 			<em>Regents Scholar, Deans List</em>
 			<details>

@@ -1,5 +1,8 @@
 
   /* No css for now */
+:root{
+  background-color: azure;
+}
 
 nav {
   background-color: rgb(63, 170, 122); /* Choose a background color */
@@ -120,6 +123,8 @@ time {
   grid-template-rows: auto; /* Two rows, both auto-sized */
   gap: 10px; /* Add a gap between grid items */
   background-color: rgb(180, 194, 188);
+  justify-content: center; /* centers items horizontally */
+  align-items: center; /* centers items vertically */
 }
 
 .grid_text {
@@ -136,15 +141,35 @@ time {
   padding: 1rem;
 }
 
-.media_grouping > * {
-  width: 100%;
-  position: relative;
-
-}
+/* .media_grouping > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
 
 cite {
   text-align: center;
 }
+
+.info_section ul {
+  padding: 0 0 0 5%;
+  margin:0%
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #nav_button{
   display: block;
