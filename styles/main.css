@@ -1,5 +1,4 @@
 
-  /* No css for now */
 :root{
   --big-background-color: rgb(240, 247, 247);
   --nav-background-color: rgb(63, 170, 122);
@@ -39,6 +38,40 @@
   src: url("../fonts/Literata/static/Literata-Italic.ttf") format("truetype");
 }
 
+
+section {
+  border-radius: 3%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: var(--section-background-color);
+}
+
+li a {
+  font-family: "Literata", serif;
+}
+
+h1 {
+  margin:0;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+time {
+  font-style:italic;
+  font-weight: bold;  
+}
+
+
+
 nav {
   background-color: var(--nav-background-color); /* Choose a background color */
   padding: 10px;
@@ -74,97 +107,6 @@ nav a:hover {
 nav li:hover{
   background-color: rgb(123, 169, 148);
 }
-
-section {
-  border-radius: 3%;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  background-color: var(--section-background-color);
-}
-
-li a {
-  font-family: "Literata", serif;
-}
-
-h1 {
-  margin:0;
-  text-align: center;
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 2rem;
-  text-align: center;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-
-time {
-  font-style:italic;
-  font-weight: bold;  
-}
-
-#about_me {
-  display: grid;
-  grid-template-columns: 1fr 2fr; /* Two columns, with the first column taking up 1 part and the second taking up 2 parts */
-  grid-template-rows: auto; /* Two rows, both auto-sized */
-  gap: 10px; /* Add a gap between grid items */
-}
-
-
-#portrait {
-  grid-row: 1 / 3; /* Position in the upper left (row 1) */
-  grid-column: 1 / 2; /* Position in the upper left (column 1) */
-  align-self: center;
-}
-
-
-#wtf {
-  grid-column: 2 / 3;
-}
-@media (max-width: 767px) {
-  #about_me {
-    grid-template-columns: 1fr; /* Two columns, with the first column taking up 1 part and the second taking up 2 parts */
-    grid-template-rows: 2fr; /* Two rows, both auto-sized */
-    gap: 10px; /* Add a gap between grid items */
-  }
-
-  #portrait {
-    grid-row: 2; /* Position in the upper left (row 1) */
-    grid-column: 1; /* Position in the upper left (column 1) */
-  }
-  #wtf{
-    grid-row: 1; /* Position in the upper left (row 1) */
-    grid-column: 1; /* Position in the upper left (column 1) */
-  }
-}
-
-#about_me h2{
-  margin: 0;
-  font-size: 1.5rem;
-  text-align: center;
-}
-
-#contact_me{
-  width:min-content;
-  height: min-content;
-  padding:0;
-  color:blue
-}
-  
-#contact_list{
-  padding:0;
-  text-align: center;
-}
-
-#contact_list li {
-  display:inline-block; /* Display list items horizontally */
-  margin: 0 1rem; /* Add space between list items */
-}
-
-
 .grid_wrapper {
   display: grid;
   grid-template-columns: var(--wide-grid-template-columns); /* Two columns, with the first column taking up 1 part and the second taking up 2 parts */
@@ -209,6 +151,67 @@ time {
     padding: 1rem;
   }
 }
+
+
+
+#about_me {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Two columns, with the first column taking up 1 part and the second taking up 2 parts */
+  grid-template-rows: auto; /* Two rows, both auto-sized */
+  gap: 10px; /* Add a gap between grid items */
+}
+
+
+#portrait {
+  grid-row: 1 / 3; /* Position in the upper left (row 1) */
+  grid-column: 1 / 2; /* Position in the upper left (column 1) */
+  align-self: center;
+}
+
+
+#intro_grid {
+  grid-column: 2 / 3;
+}
+@media (max-width: 767px) {
+  #about_me {
+    grid-template-columns: 1fr; /* Two columns, with the first column taking up 1 part and the second taking up 2 parts */
+    grid-template-rows: 2fr; /* Two rows, both auto-sized */
+    gap: 10px; /* Add a gap between grid items */
+  }
+
+  #portrait {
+    grid-row: 2; /* Position in the upper left (row 1) */
+    grid-column: 1; /* Position in the upper left (column 1) */
+  }
+  #intro_grid{
+    grid-row: 1; /* Position in the upper left (row 1) */
+    grid-column: 1; /* Position in the upper left (column 1) */
+  }
+}
+
+#about_me h2{
+  margin: 0;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+#contact_me{
+  width:min-content;
+  height: min-content;
+  padding:0;
+  color:blue
+}
+  
+#contact_list{
+  padding:0;
+  text-align: center;
+}
+
+#contact_list li {
+  display:inline-block; /* Display list items horizontally */
+  margin: 0 1rem; /* Add space between list items */
+}
+
 
 /* .media_grouping > * {
   display: flex;
