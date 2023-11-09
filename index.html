@@ -6,7 +6,7 @@
 	<meta name="description" content="Personal Site for Jonathan Weakliem">
 	<meta name="keywords" content="Jonathan Weakliem, Resume, Projects, Software Engineering, UC San Diego">
 	<meta name="author" content="Jonathan Weakliem">
-	<meta name="viewport" content="width=demlvice-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Jonathan Weakliem Personal Site</title>
 	<!-- TODO: Change later -->
 	<link href="images/favicon.ico" rel="icon">
@@ -20,43 +20,51 @@
 
 <body>
 	<header>
+			<!-- <button id="nav_button" name="open or collapse navigation">
+				>
+			</button> -->
 		<nav>
-			<button type="button">Home</button>
-			<button type="button">Work Experience</button>
-			<button type="button">Projects</button>
-			<button type="button">Education</button>
-			<button type="button">Skills</button>
-			<button type="button" onclick="window.location.href='./experiments.html';">Experiments</button>
+			<ul>
+				<li><a href="./index.html">Home</a></li>
+				<li><a href="./#about_me">About Me</a></li>
+				<li><a href="./#work_experience">Work Experience</a></li>
+				<li><a href="./#projects">Projects</a></li>
+				<li><a href="./#education">Education</a></li>
+				<li><a href="./#skills">Skills</a></li>
+				<li><a href="./experiments.html">Experiments</a></li>
+			</ul>
 		</nav>		
 	</header>
 	
 	<main>
 		<section id="about_me" title="About Me">
-			<h1>Site is currently under construction</h1>
-			<h1>Jonathan Weakliem</h1>
-			<h2>About me:</h2>
-			<p>
-				Lots of text about myself wowww Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
+			<div id="wtf">
+				<h1>Jonathan Weakliem</h1>
+				<!-- <h2>About me:</h2> -->
+				<p id="abut_me_text">
+					Lots of text about myself wowww Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+
+				<section id="contact">
+					<!--  -->
+					<h2 style="font-size: 1.5;">Contact Me:</h2>
+					<ul id="contact_list">
+						<li><a href="https://www.linkedin.com/in/jweakliem/">LinkedIn</a></li>
+						<li>
+							<address>
+								<a href="jonathanweakliem@gmail.com">
+									Email
+								</a>
+							</address>
+	
+								</li>
+						<li><a href="https://github.com/jdweak">Github</a></li>
+					</ul>
+			</div>
 			<picture id="portrait">
 				<source srcset="./images/portrait.webp" type="image/webp">
-				<img src="./images/portrait.jpg" height="300" width="300" alt = "portrait shot">
+				<img src="./images/portrait.jpg" height="300vw" width="300vw" alt = "portrait shot">
 			</picture>
-			<section id="contact">
-				<!--  -->
-				<h2>Contact Me:</h2>
-				<ul>
-					<li><a href="https://www.linkedin.com/in/jweakliem/">LinkedIn</a></li>
-					<li>
-						<address>
-							<a href="jonathanweakliem@gmail.com">
-								Email
-							</a>
-						</address>
-
-							</li>
-					<li><a href="https://github.com/jdweak">Github</a></li>
-				</ul>
 			</section>
 
 		</section>
@@ -64,95 +72,61 @@
 		<!-- Work Experience -->
 
 		<section id="work_experience">
-			<h1>Work Experience</h1>
-			<section id="Allthenticate_Fullstack">
-				<h2>Fullstack Software Engineering Intern @ Allthenticate</h2>
-				<p><strong>June 2023 - Sept. 2023, Houston TX</strong></p>
-				<p>
-					Worked as a software engineering intern at Allthenticate, a company that provides passwordless authentication solutions for 
-					smart doorlocks, desktops, and web applications. My work for this Summer was focused on the company's cloud infastructure.
-				</p>
-				<h3>Accomplishments:</h3>
-				<ul>
-					<li>point 1</li>
-				</ul>
+			<h2>Work Experience</h2>
+			<section id="Allthenticate_Fullstack" class="info_section">
+				<div class="grid_text">
+					<h3>Fullstack Software Engineering Intern @ Allthenticate</h3>
+					<time>June 2023 - Sept. 2023, Houston TX</time>
+					<p>
+						Worked as a software engineering intern at Allthenticate, a company that provides passwordless authentication solutions for 
+						smart doorlocks, desktops, and web applications. My work for this Summer was focused on the company's cloud infastructure.
+					</p>
+					<h3>Accomplishments:</h3>
+					<ul>w
+						<li>point 1</li>
+					</ul>
+				</div>
+
 				<!-- Play around with resolution in the future -->
 				<div class="media_grouping">
-					<video preload="none">
-						<source src="./videos/" type="video/mp4">
+					<video controls>
+						<source preload="none" src="./videos/auth_push.mp4" type="video/mp4">
 						Demo of web authentication feature
-					</video> 
+					</video>
+					<cite>Before/after of the web authentication push notifications</cite>
 				</div>
+					
 			</section>
-
-			<section id="NLP_Research">
-				<h2>Undergraduate Researcher @ Computing for Social Good Lab, UC San Diego</h2>
-				<p><strong>Sept. 2022 - June 2023, San Diego CA</strong></p>
-				<p>
-					Researched mental burnout on Reddit using NLP techniques with the CSG Lab at UCSD.  
-				</p>
-				<h3>Accomplishments:</h3>
-				<ul>
-					<li>point 1</li>
-				</ul>
-				<!-- Play around with resolution in the future -->
-				<div class="media_grouping">
-					<picture id="nlp_pic">
-						<img src="./images/placeholder.png" height="300" width="300" alt = "placeholder text" loading="lazy">
-					</picture>
-				</div>
+				
+				<section id="NLP_Research">
+					<div class="grid_text">
+						<h3>Undergraduate Researcher @ Computing for Social Good Lab, UC San Diego</h3>
+						<time>Sept. 2022 - June 2023, San Diego CA</time>
+						<p>
+						Researched mental burnout on Reddit using NLP techniques with the CSG Lab at UCSD.  
+						</p>
+						<h3>Accomplishments:</h3>
+						<ul>
+							<li>point 1</li>
+						</ul>
+					</div>
+					<!-- Play around with resolution in the future -->
+					<div class="media_grouping">
+						<picture>
+							<source srcset="./images/portrait.webp" type="image/webp">
+							<!-- <img src="./images/ersp.jpg" height="300vh" alt = "presenting research results"> -->
+						</picture>
+					</div>
 			</section>
-
-
-			<section id="Allthenticate_OS">
-				<h2>Software Engineering Intern @ Allthenticate</h2>
-				<p><strong>June. 2022 - Sept. 2022, Santa Barbara CA</strong></p>
-				<p>
-					Worked on Allthenticate's Desktop application codestack, specifically building the Windows OS
-					implementation of company software
-				</p>
-				<h3>Accomplishments:</h3>
-				<ul>
-					<li>point 1</li>
-				</ul>
-				<!-- Play around with resolution in the future -->
-				<div class="media_grouping">
-					<picture id="allthenticate_windows_pic">
-						<img src="./images/placeholder.png" height="300" width="300" alt = "placeholder text" loading="lazy">
-					</picture>
-				</div>
-			</section>
-
-
-			<section id="Sonatech">
-				<h2>Manufacturing Engineering Intern @ Sonatech</h2>
-				<p><strong>Mar. 2021 - Sept. 2021, Santa Barbara CA</strong></p>
-				<p>
-					Worked on the manufacturing process for submarine sonar arrays
-				</p>
-				<h3>Accomplishments:</h3>
-				<ul>
-					<li>point 1</li>
-				</ul>
-				<!-- Play around with resolution in the future -->
-				<div class="media_grouping">
-					<picture id="sonatech_pic">
-						<img src="./images/placeholder.png" height="300" width="300" alt = "placeholder text" loading="lazy">
-					</picture>
-				</div>
-			</section>
-			
-		</section>
-
 
 
 		<!-- Projects -->
 
-		<section id="Projects">
-			<h1>Projects</h1>
+		<section id="projects">
+			<h2>Projects</h2>
 
 			<section id="image_guess">
-				<h2>Mystery Image</h2>
+				<h3>Mystery Image</h3>
 				<p>
 					App that displays the top google result and the user has to guess the search query
 				</p>
@@ -170,7 +144,7 @@
 
 
 			<section id="MC_Pluggins">
-				<h2>Minecraft Pluggins</h2>
+				<h3>Minecraft Pluggins</h3>
 				<p>
 					Minecraft plugins created using the spigot API.
 				</p>
@@ -189,9 +163,9 @@
 
 		<!-- Education -->
 
-		<section id="Education">
-			<h1>Education</h1>
-			<h2>UC San Diego</h2>
+		<section id="education">
+			<h2>Education</h2>
+			<h3>UC San Diego</h3>
 			<i>Sept. 2021 - July 2025 (Expected)</i> <br>
 			<b>Computer Science and Engineering, B.S. | GPA: 4.0</b> <br>
 			<em>Regents Scholar, Deans List</em>
@@ -209,7 +183,7 @@
 		<!-- Skills -->
 
 		<section id="skills">
-			<h1>Skills</h1>
+			<h2>Skills</h2>
 			<table>
 				<caption>Relavent Software Engineering Skills</caption>
 				<colgroup>
