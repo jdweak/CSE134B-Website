@@ -1,12 +1,22 @@
 
   /* No css for now */
 :root{
-  --background-color: azure;
+  --big-background-color: brown;
   --nav-background-color: rgb(63, 170, 122);
-  --section-background-color: rgb(180, 194, 188);
+
+  --section-background-color: azure;
+  --sub-section-background-color: rgb(180, 194, 188);
+
+  --wide-grid-template-columns: 1fr 1fr;
+  --wide-grid-template-rows: auto;
+
+  --narrow-grid-template-columns: auto;
+  --narrow-grid-template-rows: 1fr 1fr;
+
+  --phone-max-width: 767px;
 
 
-  background-color: var(--background-color);
+  background-color: var(--big-background-color);
 }
 
 @font-face {
@@ -68,6 +78,7 @@ section {
   border: #00f 3px solid;
   padding: 1rem;
   margin-bottom: 1rem;
+  background-color: var(--section-background-color);
 }
 
 li a {
@@ -144,12 +155,17 @@ time {
 
 .info_section {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two columns, with the first column taking up 1 part and the second taking up 2 parts */
-  grid-template-rows: auto; /* Two rows, both auto-sized */
+  grid-template-columns: var(--wide-grid-template-columns); /* Two columns, with the first column taking up 1 part and the second taking up 2 parts */
+  grid-template-rows: var(--wide-grid-template-rows); /* Two rows, both auto-sized */
   gap: 10px; /* Add a gap between grid items */
   background-color: rgb(180, 194, 188);
-  
 }
+
+@media (max-width: 767px) {
+  .info_section {
+    grid-template-rows: var(--narrow-grid-template-rows); 
+    grid-template-columns: var(--narrow-grid-template-columns); 
+  }
 
 .grid_text {
   grid-column: 1;
@@ -178,6 +194,27 @@ cite {
 .info_section ul {
   padding: 0 0 0 5%;
   margin:0%
+}
+
+#ucsd {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns, with the first column taking up 1 part and the second taking up 2 parts */
+  grid-template-rows: auto; /* Two rows, both auto-sized */
+  background-color: var(--sub-section-background-color)
+}
+
+#ucsd_text {
+  grid-column: 1;
+  grid-row: 2;
+  border: #00f 3px solid;
+  padding: 1% 0%;
+}
+
+#ucsd_coursework {
+  grid-column: 2;
+  grid-row: 2;
+  border: #00f 3px solid;
+  padding: 1rem;
 }
 
 table {
@@ -230,9 +267,15 @@ table th {
   color: #e74c3c; /* Change link color on hover */
   transform: translateX(5px); /* Apply a horizontal shift on hover */
 }
+/* 
+details[open] summary ~ * {
+  animation: sweep .5s ease-in-out;
+}
 
-
-
+@keyframes sweep {
+  0%    {opacity: 0; transform: translateX(-10px)}
+  100%  {opacity: 1; transform: translateX(0)}
+} */
 
 
 

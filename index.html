@@ -3,10 +3,10 @@
 
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi" />
 	<meta name="description" content="Personal Site for Jonathan Weakliem">
 	<meta name="keywords" content="Jonathan Weakliem, Resume, Projects, Software Engineering, UC San Diego">
 	<meta name="author" content="Jonathan Weakliem">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Jonathan Weakliem Personal Site</title>
 	<!-- TODO: Change later -->
 	<link href="images/favicon.ico" rel="icon">
@@ -60,6 +60,7 @@
 					</ul>
 			</div>
 			<picture id="portrait">
+				<source srcset="./images/portrait_small.jpg" type="image/webp" media="(max-width: 767px)">
 				<source srcset="./images/portrait.webp" type="image/webp">
 				<img style="border-radius: 50%" src="./images/portrait.jpg" height="300vw" width="300vw" alt = "portrait shot">
 			</picture>
@@ -116,6 +117,7 @@
 					<!-- Play around with resolution in the future -->
 					<div class="media_grouping">
 						<picture>
+							<source srcset="./images/ersp_small.jpg" type="image/jpg" media="(max-width: 767px)">
 							<source srcset="./images/ersp.webp" type="image/webp">
 							<img src="./images/placeholder.png" height="300vh" alt = "presenting research results">
 						</picture>
@@ -145,6 +147,7 @@
 					<!-- Play around with resolution in the future -->
 					<div class="media_grouping">
 						<picture id="mystery_image_pic">
+							<source srcset="./images/mystery_image_small.jpg" type="image/jpg" media="(max-width: 767px)">
 							<source srcset="./images/mystery_image.webp" type="image/webp">
 							<img src="./images/mystery_image.jpg" alt = "Screenshot of Mystery Image app" loading="lazy">
 						</picture>
@@ -155,19 +158,27 @@
 
 		<section id="education">
 			<h2>Education</h2>
-			<h3>UC San Diego</h3>
-			<time style="font-weight:normal;">Sept. 2021 - July 2025 (Expected)</time> <br>
-			<b>Computer Science and Engineering, B.S. | GPA: 4.0</b> <br>
-			<em>Regents Scholar, Deans List</em>
-			<details>
-				<summary>Relavent Coursework</summary>
-				<aside><p>Upper division CS courses listed</p> </aside>
-				<p>
-					Advanced Data Structures, Theory of Computation, Intro to CS Research
-					Software Engineering, Algorithm Design, Operating Systems, Intro to Programming Competitions
-				</p>
-			</details>
+			<section id="ucsd">
+				<h3>UC San Diego</h3>
+				<div id="ucsd_text">
+					<time style="font-weight:normal;">Sept. 2021 - July 2025 (Expected)</time> <br>
+					<b>Computer Science and Engineering, B.S. | GPA: 4.0</b> <br>
+					<em>Regents Scholar, Deans List</em>
+				</div>
+				
+				<div id="ucsd_coursework">
+					<details>
 
+					<summary>Relavent Coursework</summary>
+					<aside><p>Upper division CS courses listed</p> </aside>
+					<p>
+						Advanced Data Structures, Theory of Computation, Intro to CS Research
+						Software Engineering, Algorithm Design, Operating Systems, Intro to Programming Competitions
+					</p>
+				</details>
+			</div>
+				
+			</section>
 		</section>
 
 		<!-- Skills -->
