@@ -359,6 +359,10 @@
         document.getElementById("submit_button").addEventListener("click", function(event) {
             // prevent default action
             event.preventDefault();
+            document.getElementById("name").reportValidity();
+            document.getElementById("email").reportValidity();
+            document.getElementById("comments").reportValidity();
+
             // check if email is valid
             let valid = true;
             let error_list = [];
