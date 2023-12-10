@@ -41,6 +41,18 @@
                 super();
                 this.attachShadow({mode: 'open'});
 
+                // making more modular: if there aren't css variables for the colors set in root, give them defaults
+                if (!getComputedStyle(document.documentElement).getPropertyValue('--star-selected-color')) {
+                    this.shadowRoot.innerHTML = `
+                        <style>
+                            :host {
+                                --star-selected-color: gold;
+                                --star-unselected-color: grey;
+                            }
+                        </style>
+                    `;
+                }
+
                 // set default info for the widget and request it will send
                 this.maxRating = 5;
                 this.formData = new FormData();
