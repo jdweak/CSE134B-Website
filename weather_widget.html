@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi" />
+	<meta name="description" content="UCSD Weather Forecast">
+	<meta name="author" content="Jonathan Weakliem">
+	<title>UCSD Weather Forecast</title>
+	<link href="images/favicon.ico" rel="icon">
+    <style>
+    </style>
+</head>
+    <body>
+        <!-- Setup weather widget and it's default -->
+        <h1>The Weather at UCSD!</h1>
+        <weather-widget>
+            <p>Weather unavailible</p>
+        </weather-widget>
+    </body>
+
+    <script type="module">
+        class WeatherWidget extends HTMLElement {
+            constructor() {
+
+                super();
+                this.attachShadow({mode: 'open'});
+
+                this.weatherData = null;
+
+                this.weather = document.createElement('span');
+                this.infoList = document.createElement('ul');
+                this.weatherSVG = document.createElement('img');
+
+                // fetch weather data (according to the docs the endpoints for specific grid values and office are subject to change,
+                // so we will just always go through the endpoint redirection for reliability (and size of the network calls is minimal))
+                fetch('https://api.weather.gov/points/38.8801,-117.2340')
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data);
+                        // now that we have the endpoint for the forecast, we can fetch the forecast data
+                        fetch(data.properties.forecast)
+                            .then(response => response.json())
+                            .then(data => {
+                                // high level forecast data
+                                this.weatherData = data.properties.periods[0];
+                                this.weather.textContent = this.weatherData.name + "'s forecast: " + this.weatherData.detailedForecast;
+                                
+                                // set the info list to show weather data
+                                this.infoList.innerHTML = `
+                                    <li>Temperature: ${this.weatherData.temperature} ${this.weatherData.temperatureUnit}</li>
+                                    <li>Wind Speed: ${this.weatherData.windSpeed}</li>
+                                    <li>Wind Direction: ${this.weatherData.windDirection}</li>
+                                    <li>Humidity: ${this.weatherData.relativeHumidity.value}%</li>
+                                    <li>Probability of Precipitation: ${this.weatherData.probabilityOfPrecipitation.value ? this.weatherData.probabilityOfPrecipitation.value : 0}%</li>
+                                `;
+
+                                // set the weather svg to the appropriate icon
+                                let shortForecast = this.weatherData.shortForecast.toLowerCase();
+                                if (shortForecast.includes("rain")) {
+                                    this.weatherSVG.src = "images/weather-widget/rain.svg";
+                                    this.weatherSVG.alt = "rain icon";
+                                } else if (shortForecast.includes("snow")) {
+                                    this.weatherSVG.src = "images/weather-widget/snow.svg";
+                                    this.weatherSVG.alt = "snow icon";
+                                } else if (shortForecast.includes("wind")) {
+                                    this.weatherSVG.src = "images/weather-widget/wind.svg";
+                                    this.weatherSVG.alt = "wind icon";
+                                } else if (shortForecast.includes("cloud")) {
+                                    this.weatherSVG.src = "images/weather-widget/clouds.svg";
+                                    this.weatherSVG.alt = "cloud icon";
+                                } else if (!this.weatherData.isDaytime){
+                                    this.weatherSVG.src = "images/weather-widget/moon.svg";
+                                    this.weatherSVG.alt = "moon icon";
+                                } else {
+                                    this.weatherSVG.src = "images/weather-widget/sun.svg";
+                                    this.weatherSVG.alt = "sun icon";
+                                }
+                                // set weather svg to appropriate size in relation to text size
+                                this.weatherSVG.style = "height: 5em; width: 5em;";                                
+                            })
+                            .catch(error => {
+                                console.error(error);
+                                this.weather.textContent = "Weather unavailible";
+                            });
+                    })
+                    .catch(error => {
+                        console.error(error);
+                        this.weather.textContent = "Weather unavailible";
+                    });
+
+                    // append the weather forecast to the shadow dom
+                    this.shadowRoot.appendChild(this.weather);
+
+                    // create a div container that the weatherSVG and infoList will be in so we can make them next to each other
+                    let div = document.createElement('div');
+                    div.id = "weather_container";
+                    div.appendChild(this.weatherSVG);
+                    div.appendChild(this.infoList);
+                    this.shadowRoot.appendChild(div);
+
+                    // add styling to make the weatherSVG and infoList inline with the weather text
+                    let style = document.createElement('style');
+                    style.textContent  = `
+                        #weather_container {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                        }
+
+                        span {
+                            font-weight: bold;
+                        }
+                        
+                        `;
+                    this.shadowRoot.appendChild(style);
+            }
+            
+        }
+
+        customElements.define('weather-widget', WeatherWidget);
+    </script>
+
+</html>
