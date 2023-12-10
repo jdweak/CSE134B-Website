@@ -33,7 +33,7 @@
 
                 // fetch weather data (according to the docs the endpoints for specific grid values and office are subject to change,
                 // so we will just always go through the endpoint redirection for reliability (and size of the network calls is minimal))
-                fetch('https://api.weather.gov/points/38.8801,-117.2340')
+                fetch('https://api.weather.gov/points/32.8801,-117.2340')
                     .then(response => response.json())
                     .then(data => {
                         console.log(data);
