@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi" />
+	<meta name="description" content="Jonathan Weakliem Rating Form">
+	<meta name="author" content="Jonathan Weakliem">
+	<title>Jonathan Weakliem Rating Form</title>
+	<link href="images/favicon.ico" rel="icon">
+	<!-- no css for now -->
+    <style>
+        /* css variables for max rating and color */
+        :root {
+            --star-selected-color: gold;
+            --star-unselected-color: grey;
+        }
+    </style>
+</head>
+
+    <body>
+        <!-- default rating widget when no JS is active -->
+        <h1>Rating Widget</h1>
+        <rating-widget>
+            <form action="https://httpbin.org/post" method="POST">
+                <label for="rating">How satisfied are you?</label>
+                <input type="hidden" name="question" value="How satisfied are you?">
+                <input type="hidden" name="sentBy" value="HTML">
+                <input type="number" id="rating" name="rating" min="1" max="5" value="0" required>
+                <button type="submit">Submit</button>
+            </form>
+        </rating-widget>
+    </body>
+
+    <!-- ================================================================================ -->
+
+    <script type="module">
+        // custom star rating widget
+        class RatingWidget extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({mode: 'open'});
+
+                // set default info for the widget and request it will send
+                this.maxRating = 5;
+                this.formData = new FormData();
+                this.formData.append("question", "How satisfied are you?");
+                this.formData.append("sentBy", "JS");
+
+                // create a parent container for the buttons and add it to the shadow dom
+                let host = document.createElement('span');
+                host.id = "host";
+                this.shadowRoot.appendChild(host);
+
+                // create 5 buttons with a star as their text, add them to the shadow dom
+                for (let i = 0; i < 5; i++) {
+                    let button = document.createElement('button');
+                    button.textContent = '\u2605';
+                    // when a button is clicked, set the response based on the score and initiate a post request to backend
+                    button.addEventListener('click', () => {
+                        this.rating = i + 1;
+                        this.formData.set("rating", this.rating);
+                        this.sendRating();
+
+                        if (this.rating / this.maxRating >= .8){
+                            this.outerHTML = `<p> Thanks for your ` + this.rating + ` star rating!</p>`;
+                        } else {
+                            this.outerHTML = `<p>Thanks for your feedback of ` + this.rating + ` stars. We'll try to do better!</p>`;
+                        }
+                    });
+                    this.shadowRoot.getElementById("host").appendChild(button);
+                }
+
+                    // add a style element to the shadow dom which will make it so that when a star is hovered over it and all the stars to the left change color
+                    let style = document.createElement('style');
+                    style.textContent = `
+                        #host
+                        {
+                            width: fit-content;
+                        }
+
+                        button {
+                            font-size: 2em;
+                            color: var(--star-unselected-color);
+                            background-color: transparent;
+                            border: none;
+                            cursor: pointer;
+                            padding: 0;
+                        }
+                        
+                        #host:hover button {
+                            color: var(--star-selected-color);
+                        }
+
+                        #host button:hover {
+                            color: var(--star-selected-color);
+                        }
+
+                        #host button:hover ~ button {
+                            color: var(--star-unselected-color);
+                        }
+                    `;
+                    this.shadowRoot.append(style);
+
+            }
+
+            sendRating() {
+                // use fetch to send a post request to httpbin
+                fetch("https://httpbin.org/post", {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/x-www-form-urlencoded;charset=UTF-8",
+                        "X-Sent-By": "JS"
+                    },
+                    body: new URLSearchParams(this.formData)
+                }).then((response) => {
+                    console.log(response.json());
+                }).catch((error) => {
+                    console.error(error);
+                });
+            }
+        }
+       
+        customElements.define('rating-widget', RatingWidget);
+    </script>
+
+</html>
